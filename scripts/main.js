@@ -87,10 +87,10 @@ function createRestartButton() {
 }
 
 function restartGame() {
+	document.getElementById("restartButton").remove();
 	instruction1.textContent = "Type in a word and press the \"Start\" button";
 	instruction2.textContent = "";
 	instruction3.textContent = "";
-	document.getElementById("gameStart").removeChild(document.getElementById("gameStart").firstChild);
 	const inputWord = document.createElement("input");
 	inputWord.id = "word";
 	document.getElementById("gameStart").appendChild(inputWord);
@@ -99,6 +99,7 @@ function restartGame() {
 	startButton.id = "start";
 	startButton.onclick = startGame;
 	document.getElementById("gameStart").appendChild(startButton);
+	attemptsLeft = 10;
 }
 
 function displayAttempts() {
